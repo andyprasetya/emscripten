@@ -477,7 +477,7 @@ def get_llc_targets():
   try:
     llc_version_info = run_process([LLVM_COMPILER, '--version'], stdout=PIPE).stdout
   except subprocess.CalledProcessError:
-    exit_with_error('error running `llv --version`.  Check your llvm installation (%s)' % LLVM_COMPILER)
+    exit_with_error('error running `llc --version`.  Check your llvm installation (%s)' % LLVM_COMPILER)
   if 'Registered Targets:' not in llc_version_info:
     exit_with_error('error parsing output of `llc --version`.  Check your llvm installation (%s)' % LLVM_COMPILER)
   pre, targets = llc_version_info.split('Registered Targets:')
